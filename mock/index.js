@@ -5,12 +5,23 @@ const user = require('./user')
 const role = require('./role')
 const article = require('./article')
 const search = require('./remote-search')
-
+const order = require('./transaction/order')
+const system = require('./system/tanent')
+const merchant = require('./merchant/merchant')
+const department = require('./merchant/department')
+const employee = require('./merchant/employee')
+const projectTime = require('./appointment/projectTime')
 const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search
+  ...search,
+  ...system,
+  ...merchant,
+  ...department,
+  ...employee,
+  ...projectTime,
+  ...order
 ]
 
 // for front mock

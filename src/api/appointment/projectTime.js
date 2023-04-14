@@ -1,11 +1,10 @@
 // 真实接口
 import request from '@/utils/request'
-import urls from '@/utils/prefix'
 export default {
   // 获取预约时间列表
   getData: (params) => {
     return request({
-      url: `${urls.user}/appointment/v1/list`,
+      url: `/appointment/v1/list`,
       method: 'post',
       data: params
     })
@@ -14,7 +13,7 @@ export default {
   getAbleTime: (params) => {
     const { tenantId } = params
     return request({
-      url: `${urls.user}/appointment/v1/appointmentDate/${tenantId}`,
+      url: `/appointment/v1/appointmentDate/${tenantId}`,
       method: 'get'
     })
   },
@@ -22,14 +21,14 @@ export default {
   setAbleTime: (params) => {
     const { tenantId, ableTime } = params
     return request({
-      url: `${urls.user}/appointment/v1/appointmentDate/${tenantId}/${ableTime}`,
+      url: `/appointment/v1/appointmentDate/${tenantId}/${ableTime}`,
       method: 'put'
     })
   },
   // 新增预约时间列表
   add: (params) => {
     return request({
-      url: `${urls.user}/appointment/v1`,
+      url: `/appointment/v1`,
       method: 'post',
       data: params
     })
@@ -37,7 +36,7 @@ export default {
   // 批量修改预约时间
   batchTime: (params) => {
     return request({
-      url: `${urls.user}/appointment/v1/appointmentDate/ids`,
+      url: `/appointment/v1/appointmentDate/ids`,
       method: 'put',
       data: params
     })
@@ -46,7 +45,7 @@ export default {
   edit: (params) => {
     // const { id } = params
     return request({
-      url: `${urls.user}/appointment/v1`,
+      url: `/appointment/v1`,
       method: 'put',
       data: params
     })
@@ -54,14 +53,14 @@ export default {
   // 删除预约时间列表
   del: (id) => {
     return request({
-      url: `${urls.user}/appointment/v1/${id}`,
+      url: `/appointment/v1/${id}`,
       method: 'delete'
     })
   },
   // 批量修改预约周期
   batchCircle: (params) => {
     return request({
-      url: `${urls.user}/appointment/v1/appointmentRecurrence/ids`,
+      url: `/appointment/v1/appointmentRecurrence/ids`,
       method: 'put',
       data: params
     })

@@ -1,9 +1,9 @@
 import request from '@/utils/request'
-import urls from '@/utils/prefix'
+// import urls from '@/utils/prefix'
 // 获取租户信息
 export function getTenantList(data) {
   return request({
-    url: `${urls.system}/tenant/v1/list`,
+    url: `/tenant/v1/list`,
     method: 'post',
     data
   })
@@ -12,7 +12,7 @@ export function getTenantList(data) {
 // 添加租户信息
 export function addTenant(data) {
   return request({
-    url: `${urls.system}/tenant/v1`,
+    url: `/tenant/v1`,
     method: 'post',
     data
   })
@@ -22,7 +22,7 @@ export function addTenant(data) {
 export function editTenant(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/tenant/v1/${id}`,
+    url: `/tenant/v1/${id}`,
     method: 'put',
     data
   })
@@ -32,7 +32,7 @@ export function editTenant(data) {
 export function delTenant(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/tenant/v1/${id}`,
+    url: `/tenant/v1/${id}`,
     method: 'delete'
   })
 }
@@ -41,7 +41,7 @@ export function delTenant(data) {
 export function editTenantStatus(data) {
   const { action, id } = data
   return request({
-    url: `${urls.system}/tenant/v1/${id}/${action}`,
+    url: `/tenant/v1/${id}/${action}`,
     method: 'put',
     data
   })
@@ -51,7 +51,7 @@ export function editTenantStatus(data) {
 export function addTenantServer(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/tenant/v1/${id}/server`,
+    url: `/tenant/v1/${id}/server`,
     method: 'post',
     data
   })
@@ -61,7 +61,7 @@ export function addTenantServer(data) {
 export function editTenantServer(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/tenant/v1/${id}/server`,
+    url: `/tenant/v1/${id}/server`,
     method: 'put',
     data
   })

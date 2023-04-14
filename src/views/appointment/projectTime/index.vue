@@ -243,7 +243,7 @@ export default {
 
       const params = Object.assign({}, this.listQuery)
       const dataRes = await api.getData(params)
-
+      console.log('dataRes', dataRes)
       if (dataRes.code) {
         this.loading = false
         return
@@ -393,7 +393,7 @@ export default {
       }
       const ableRes = await api.getAbleTime(params)
       if (ableRes.code) return
-      this.ableTime = ableRes.data
+      this.ableTime = ableRes.data.ableTime
     },
     sortChange() {
       console.log('sortChange')

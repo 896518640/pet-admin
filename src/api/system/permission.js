@@ -1,9 +1,8 @@
 import request from '@/utils/request'
-import urls from '@/utils/prefix'
 // 获取权限树
 export function getPermissionTree(query) {
   return request({
-    url: `${urls.system}/permission/v1/tree`,
+    url: `/permission/v1/tree`,
     method: 'get',
     params: query
   })
@@ -12,7 +11,7 @@ export function getPermissionTree(query) {
 // 查询权限列表
 export function getPermissionList(data) {
   return request({
-    url: `${urls.system}/permission/v1/list`,
+    url: `/permission/v1/list`,
     method: 'post',
     data
   })
@@ -21,7 +20,7 @@ export function getPermissionList(data) {
 // 添加权限信息
 export function addPermission(data) {
   return request({
-    url: `${urls.system}/permission/v1`,
+    url: `/permission/v1`,
     method: 'post',
     data
   })
@@ -31,7 +30,7 @@ export function addPermission(data) {
 export function editPermission(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/permission/v1/${id}`,
+    url: `/permission/v1/${id}`,
     method: 'put',
     data
   })
@@ -40,7 +39,7 @@ export function editPermission(data) {
 // 删除权限信息
 export function delPermission(id) {
   return request({
-    url: `${urls.system}/permission/v1/${id}`,
+    url: `/permission/v1/${id}`,
     method: 'delete'
   })
 }
@@ -49,7 +48,7 @@ export function delPermission(id) {
 export function editPermissionStatus(data) {
   const { id, action } = data
   return request({
-    url: `${urls.system}/permission/v1/${id}/${action}`,
+    url: `/permission/v1/${id}/${action}`,
     method: 'put',
     data
   })

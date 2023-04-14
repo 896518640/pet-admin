@@ -1,9 +1,8 @@
 import request from '@/utils/request'
-import urls from '@/utils/prefix'
 // 查询账号信息
 export function getAccountList(params) {
   return request({
-    url: `${urls.system}/account/v1/list`,
+    url: `/account/v1/list`,
     method: 'post',
     data: params
   })
@@ -12,7 +11,7 @@ export function getAccountList(params) {
 // 添加账号信息
 export function addAccount(data) {
   return request({
-    url: `${urls.system}/account/v1`,
+    url: `/account/v1`,
     method: 'post',
     data
   })
@@ -22,7 +21,7 @@ export function addAccount(data) {
 export function editAccount(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/account/v1/${id}`,
+    url: `/account/v1/${id}`,
     method: 'put',
     data
   })
@@ -31,7 +30,7 @@ export function editAccount(data) {
 // 删除账号信息
 export function delAccount(id) {
   return request({
-    url: `${urls.system}/account/v1/${id}`,
+    url: `/account/v1/${id}`,
     method: 'delete'
   })
 }
@@ -40,7 +39,7 @@ export function delAccount(id) {
 export function editAccountStatus(data) {
   const { id, action } = data
   return request({
-    url: `${urls.system}/account/v1/${id}/${action}`,
+    url: `/account/v1/${id}/${action}`,
     method: 'put',
     data
   })
@@ -50,7 +49,7 @@ export function editAccountStatus(data) {
 export function resetAccountPassword(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/account/v1/${id}/password`,
+    url: `/account/v1/${id}/password`,
     method: 'put',
     data
   })
@@ -60,7 +59,7 @@ export function resetAccountPassword(data) {
 export function AssignRoles(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/account/v1/${id}/role`,
+    url: `/account/v1/${id}/role`,
     method: 'post',
     data
   })
@@ -69,7 +68,7 @@ export function AssignRoles(data) {
 // 获取用户信息
 export function getInfo(token) {
   return request({
-    url: `${urls.system}/account/v1/info`,
+    url: `/account/v1/info`,
     method: 'get'
     // params: { token }
   })
@@ -78,7 +77,7 @@ export function getInfo(token) {
 // 获取角色信息
 export function getRoles() {
   return request({
-    url: `${urls.system}/role/v1/assignable`,
+    url: `/role/v1/assignable`,
     method: 'get'
   })
 }

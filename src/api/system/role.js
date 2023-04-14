@@ -1,9 +1,9 @@
 import request from '@/utils/request'
-import urls from '@/utils/prefix'
+
 // 获取角色信息
 export function getRoleList(data) {
   return request({
-    url: `${urls.system}/role/v1/list`,
+    url: `/role/v1/list`,
     method: 'post',
     data
   })
@@ -12,7 +12,7 @@ export function getRoleList(data) {
 // 添加角色信息
 export function addRole(data) {
   return request({
-    url: `${urls.system}/role/v1`,
+    url: `/role/v1`,
     method: 'post',
     data
   })
@@ -22,7 +22,7 @@ export function addRole(data) {
 export function editRole(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/role/v1/${id}`,
+    url: `/role/v1/${id}`,
     method: 'put',
     data
   })
@@ -31,7 +31,7 @@ export function editRole(data) {
 // 获取角色详情
 export function getRoleInfo(id) {
   return request({
-    url: `${urls.system}/role/v1/${id}`,
+    url: `/role/v1/${id}`,
     method: 'get'
   })
 }
@@ -40,7 +40,7 @@ export function getRoleInfo(id) {
 export function assignPermission(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/role/v1/${id}/permission`,
+    url: `/role/v1/${id}/permission`,
     method: 'post',
     data
   })
@@ -50,7 +50,7 @@ export function assignPermission(data) {
 export function updatePermission(data) {
   const { id } = data
   return request({
-    url: `${urls.system}/role/v1/${id}/permission`,
+    url: `/role/v1/${id}/permission`,
     method: 'patch',
     data
   })
@@ -59,7 +59,7 @@ export function updatePermission(data) {
 // 删除角色信息
 export function delRole(id) {
   return request({
-    url: `${urls.system}/role/v1/${id}`,
+    url: `/role/v1/${id}`,
     method: 'delete'
   })
 }
@@ -68,7 +68,7 @@ export function delRole(id) {
 export function editRoleStatus(data) {
   const { id, action } = data
   return request({
-    url: `${urls.system}/role/v1/${id}/${action}`,
+    url: `/role/v1/${id}/${action}`,
     method: 'put',
     data
   })
